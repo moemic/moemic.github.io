@@ -38,6 +38,101 @@
                     height: 400px;
                 }
             }
+            /* Magazine-style Photo Gallery */
+            .magazine-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            .gallery-item {
+                position: relative;
+                aspect-ratio: 1;
+                border-radius: 0.5rem;
+                overflow: hidden;
+                cursor: pointer;
+                background: #f0f0f0;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+            .gallery-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            }
+            .gallery-item-lg {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+            .gallery-item-sm {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .gallery-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                transition: transform 0.3s ease;
+            }
+            .gallery-item:hover .gallery-image {
+                transform: scale(1.08);
+            }
+            .gallery-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                border-radius: 0.5rem;
+            }
+            .gallery-item:hover .gallery-overlay {
+                opacity: 1;
+            }
+            .gallery-title {
+                color: white;
+                font-size: 1.25rem;
+                font-weight: 500;
+                text-align: center;
+                margin: 0;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            /* Responsive adjustments for magazine gallery */
+            @media (max-width: 992px) {
+                .magazine-gallery {
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                    gap: 1rem;
+                }
+                .gallery-item-lg {
+                    grid-column: span 2;
+                    grid-row: span 2;
+                }
+            }
+            @media (max-width: 768px) {
+                .magazine-gallery {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0.75rem;
+                }
+                .gallery-item-lg {
+                    grid-column: span 2;
+                    grid-row: span 1;
+                }
+            }
+            @media (max-width: 576px) {
+                .magazine-gallery {
+                    grid-template-columns: 1fr;
+                    gap: 0.5rem;
+                }
+                .gallery-item-lg {
+                    grid-column: span 1;
+                    grid-row: span 1;
+                }
+            }
         </style>
     </head>
     <body id="page-top">
@@ -55,6 +150,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
@@ -116,6 +212,53 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Photo Gallery - Magazine Style -->
+            <section class="resume-section" id="gallery">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">フォトギャラリー</h2>
+                    <p class="mb-4">カメラ歴15年以上で撮影した作品や、制作したコンテンツを紹介しています。</p>
+                    <div class="magazine-gallery">
+                        <div class="gallery-item gallery-item-lg">
+                            <img src="assets/img/profile.jpg" alt="ポートフォリオ写真 1" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <p class="gallery-title">撮影作品集</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="assets/img/profile.jpg" alt="ポートフォリオ写真 2" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <p class="gallery-title">コンテンツ制作</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="assets/img/profile.jpg" alt="ポートフォリオ写真 3" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <p class="gallery-title">イベント運営</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item gallery-item-sm">
+                            <img src="assets/img/profile.jpg" alt="ポートフォリオ写真 4" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <p class="gallery-title">スタジオ</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="assets/img/profile.jpg" alt="ポートフォリオ写真 5" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <p class="gallery-title">YouTube制作</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item gallery-item-lg">
+                            <img src="assets/img/profile.jpg" alt="ポートフォリオ写真 6" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <p class="gallery-title">フォトグラフィ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-muted mt-5 small">※ 写真は順次更新予定です。高品質な画像を <code>/assets/img/</code> ディレクトリに追加してください。</p>
                 </div>
             </section>
             <hr class="m-0" />
