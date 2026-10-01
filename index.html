@@ -45,10 +45,10 @@ nav a:hover{color:var(--ink)}
 .banner{margin:0;line-height:0;background:#efe9dc;border-bottom:1px solid var(--line)}
 .banner img{width:100%;max-width:1600px;height:auto;margin:0 auto}
 .intro{padding:48px 0;border-bottom:1px solid var(--line)}
-.intro-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
+.intro-grid{display:grid;gap:20px}
 @media (max-width:860px){.intro{padding:36px 0}.intro-grid{grid-template-columns:1fr;gap:20px}}
-.tagline{font-size:clamp(22px,2.8vw,34px);font-weight:900;line-height:1.4;letter-spacing:.02em}
-.tagline span{color:var(--accent);display:inline-block}
+.tagline{white-space:nowrap;font-size:clamp(18px,4.9vw,40px);font-weight:900;line-height:1.4;letter-spacing:.02em}
+.tagline span{color:var(--accent)}
 .eyebrow{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.14em;text-transform:uppercase}
 .nw{white-space:nowrap}
 .lead{font-size:19px;color:var(--muted);max-width:34em}
@@ -131,9 +131,12 @@ details.case summary:hover h3{color:var(--accent)}
 /* contact */
 .contact{background:var(--ink);color:var(--bg);border:0}
 .contact h2{font-size:clamp(36px,7vw,80px)}
-.contact a.mail{display:inline-block;font-family:var(--mono);font-size:clamp(18px,3vw,28px);margin:28px 0 40px;text-decoration:none;border-bottom:2px solid var(--accent)}
 .contact .btn{border-color:var(--bg);color:var(--bg)}
 .contact .btn:hover{color:var(--accent-ink)}
+.contact .btn.line{margin:32px 0 12px;padding:16px 28px;font-size:17px;background:#06c755;border-color:#06c755;color:#fff}
+.contact .btn.line:hover{background:var(--accent);border-color:var(--accent)}
+.mail-alt{font-size:15px;opacity:.8;margin-bottom:32px}
+.mail-alt a{font-family:var(--mono)}
 .cal{margin-top:56px;background:#fff;border-radius:4px;overflow:hidden}
 .cal iframe{width:100%;height:900px;border:0;display:block}
 @media (max-width:760px){.cal iframe{height:720px}}
@@ -168,7 +171,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div>
         <p class="lead">2000年のブログ開設から、ビットコイン、民泊、GPUマイニング、生成AIまで。<strong>黎明期に飛び込み、試し、仕組みにしてきた</strong>25年の記録です。</p>
         <div class="cta">
-          <a class="btn primary" href="#contact">相談・アポイント →</a>
+          <a class="btn primary" href="https://lin.ee/tK7z8jB" target="_blank" rel="noopener">LINEで相談する →</a>
+          <a class="btn" href="#contact">空き時間を見る</a>
           <a class="btn" href="https://x.com/sakashiiiii/" target="_blank" rel="noopener">X</a>
           <a class="btn" href="https://www.youtube.com/@TSakashita" target="_blank" rel="noopener">YouTube</a>
           <a class="btn" href="https://note.com/micnote" target="_blank" rel="noopener">note</a>
@@ -336,7 +340,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="wrap">
       <p class="eyebrow">07 — CONTACT</p>
       <h2 style="margin-top:16px">新しいこと、<br>一緒にやりませんか。</h2>
-      <a class="mail" href="mailto:sss@sss-group.net">sss@sss-group.net</a>
+      <a class="btn line" href="https://lin.ee/tK7z8jB" target="_blank" rel="noopener">LINE公式アカウントで相談する →</a>
+      <p class="mail-alt">メールの場合：<a href="mailto:sss@sss-group.net">sss@sss-group.net</a></p>
       <div class="cta">
         <a class="btn" href="https://x.com/sakashiiiii/" target="_blank" rel="noopener">X @sakashiiiii</a>
         <a class="btn" href="https://www.youtube.com/@TSakashita" target="_blank" rel="noopener">YouTube</a>
