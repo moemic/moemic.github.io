@@ -44,6 +44,8 @@ nav a:hover{color:var(--ink)}
 /* hero */
 .hero{padding:96px 0 72px;border-bottom:1px solid var(--line)}
 .hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:end}
+.tagline{font-size:clamp(22px,2.8vw,34px);font-weight:900;line-height:1.4;letter-spacing:.02em}
+.tagline span{color:var(--accent);display:inline-block}
 .eyebrow{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.14em;text-transform:uppercase}
 h1{font-family:var(--serif);font-weight:800;font-size:clamp(38px,6.6vw,88px);line-height:1.12;letter-spacing:-.01em;margin:18px 0 28px}
 .nw{white-space:nowrap}
@@ -55,8 +57,9 @@ h1 em{font-style:normal;color:var(--accent)}
 .btn.primary{background:var(--ink);color:var(--bg)}
 .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .portrait{position:relative}
-.portrait img{width:100%;aspect-ratio:4/4.6;object-fit:cover;border-radius:4px;filter:grayscale(.15) contrast(1.05)}
-.portrait figcaption{position:absolute;left:-14px;bottom:24px;background:var(--accent);color:var(--accent-ink);font-family:var(--mono);font-size:12px;padding:6px 12px;line-height:1.4}
+.portrait{background:var(--accent);border-radius:999px 999px 6px 6px;overflow:hidden;padding-top:12%}
+.portrait img{width:100%;height:auto;display:block}
+.portrait figcaption{position:absolute;left:0;right:0;bottom:0;background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:12px;padding:8px 14px;line-height:1.4;text-align:center}
 @media (max-width:860px){.hero{padding:56px 0}.hero-grid{grid-template-columns:1fr;gap:40px}.portrait{max-width:320px}}
 
 /* firsts timeline */
@@ -165,7 +168,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="hero">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow" style="font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.1em">新時代のライフスタイルイノベーター</p>
+        <p class="tagline">新時代の<span>ライフスタイルイノベーター</span></p>
         <h1><span class="nw">誰よりも先に、</span><br><em class="nw">やってみる。</em></h1>
         <p class="lead">坂下たかひろ。2000年のブログ開設から、ビットコイン、民泊、GPUマイニング、生成AIまで。<strong>黎明期に飛び込み、試し、仕組みにしてきた</strong>25年の記録です。</p>
         <div class="cta">
@@ -176,7 +179,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         </div>
       </div>
       <figure class="portrait">
-        <img src="assets/img/profile.jpg" alt="坂下たかひろのポートレート" width="480" height="600">
+        <img src="assets/img/profile-cutout.png" alt="坂下たかひろのポートレート" width="768" height="1024">
         <figcaption>Tokyo ⇄ Kanazawa</figcaption>
       </figure>
     </div>
