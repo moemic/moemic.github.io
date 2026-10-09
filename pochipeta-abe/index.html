@@ -13,6 +13,28 @@
 /* platform-first improvements */
 .osnav{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 8px}.osnav a{display:flex;align-items:center;justify-content:center;flex:1;min-width:210px;border:1px solid #cbd9ee;background:white;border-radius:14px;padding:14px 18px;font-weight:800;text-decoration:none;color:#153a86}.osnav a.primary{background:#2154c6;color:#fff;border-color:#2154c6}.osnav small{font-size:12px;display:block;font-weight:500}.osnav a:hover{filter:brightness(.97)}.section{scroll-margin-top:15px}.winheadline{font-size:13px;font-weight:800;color:#2053a5;margin-bottom:8px}.step .btn{margin-top:10px}.flowcall{display:inline-block;background:#e9f2ff;border-radius:9px;color:#174493;font-weight:800;padding:5px 11px;margin:2px 0 10px}.notehint{font-size:14px;color:#59677a}.pill-win{background:#e8f0ff}.pill-ios{background:#eef2f7}.os-check{border-top:1px solid #e5ecf4;padding-top:13px;margin-top:14px}.os-check h3{margin:0 0 8px}.twop{display:grid;grid-template-columns:1fr 1fr;gap:10px}.twop>div{border:1px solid #dfe8f4;background:#f7fafe;padding:16px;border-radius:13px}.twop strong{display:block;margin-bottom:5px}.quick{grid-template-columns:repeat(3,1fr)}.section .minor{font-size:13px;color:#65758a;font-weight:700}
 @media(max-width:700px){.osnav a{min-width:0;flex-basis:100%}.twop{grid-template-columns:1fr}.quick{grid-template-columns:1fr}}
+
+/* API key visual walkthrough */
+.input-values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 23px}
+.input-value{background:#f7faff;border:1px solid #d8e6fa;border-radius:13px;padding:15px}
+.input-value .input-label{display:block;font-size:12px;color:#596c87;font-weight:800;margin-bottom:7px}
+.input-value code{display:block;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#16478d;font-size:20px;font-weight:800;overflow-wrap:anywhere}
+.input-value .input-note{display:block;font-size:12px;color:#66758a;margin-top:6px;line-height:1.55}
+.screen-guide{border-radius:15px;border:1px solid #dce5ef;margin:14px 0 20px;background:#fff;overflow:hidden}
+.screen-guide img{width:100%;max-height:390px;object-fit:contain;display:block;background:#f1f4f9}
+.screen-guide figcaption{padding:10px 14px;font-size:12px;line-height:1.65;color:#62728b;background:#f8fafc}
+.screen-guide figcaption a{font-size:12px}
+.screen-guide img[src*="codelabs"]{max-height:430px}
+.field-sample{margin:12px 0;background:#f4f8ff;border:1px solid #d4e1f2;border-radius:12px;padding:13px 16px}
+.field-sample .field-name{font-size:12px;color:#566a87;font-weight:800;display:block}
+.field-sample .field-value{font-size:20px;font-weight:800;color:#174b9b;display:block;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.field-sample .field-help{font-size:12px;color:#596b81;display:block}
+.option-block{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.option-block>div{padding:14px;background:#f5f8fd;border-radius:11px;border:1px solid #e3e9f2}
+.option-block h4{margin:0 0 5px;font-size:14px}
+.option-block p{font-size:13px;margin:0;line-height:1.7}
+.inline-kbd{display:inline-block;border:1px solid #cfd9e9;border-radius:6px;padding:1px 7px;background:#f5f8fc;font-size:.86em;color:#153a70;font-weight:750}
+@media(max-width:700px){.input-values,.option-block{grid-template-columns:1fr}.screen-guide img{max-height:300px}.input-value{padding:12px}}
 </style>
 </head>
 <body>
@@ -47,16 +69,42 @@
 <div class="callout"><strong>注意：Googleの「Geminiデスクトップアプリ」ではありません。</strong><p>今回インストールするのは <strong>ぽちペタ（音声入力ソフト）</strong> です。Google AI Studioは、そのぽちペタで使うAPIキーを作るために開きます。</p></div>
 <div class="callout warn small"><strong>Windowsから警告が出たら：</strong>警告が出ても、無条件に「保護をオフ」にしないでください。公式配布元とファイルの発行元を確認し、不明な場合はインストールを中断して相談しましょう。</div>
 </section>
-<section class="section" id="get-key"><span class="pill">WINDOWS ② / iPhoneと共通</span><h2>Google AI StudioでAPIキーを取得する</h2>
-<div class="steps">
-<div class="step"><div class="num">1</div><div><h3>Google AI Studioにアクセス</h3><p><a href="https://aistudio.google.com/api-keys" rel="noopener" target="_blank">https://aistudio.google.com/api-keys</a> を開きます。</p></div></div>
-<div class="step"><div class="num">2</div><div><h3>自分のGoogleアカウントでログイン</h3><p>初回は利用規約を確認し、必要な同意を行います。</p></div></div>
-<div class="step"><div class="num">3</div><div><h3>APIキーの画面を確認する</h3><p>最初からキーが用意されている場合があります。見当たらなければ「Create API key」または「APIキーを作成」を押します。表示が少し違う場合もあります。</p></div></div>
-<div class="step"><div class="num">4</div><div><h3>プロジェクトを選ぶ</h3><p>選択できるプロジェクトがあれば指定し、必要なら新規プロジェクトを作成します。キーはGoogle Cloudプロジェクトに紐づきます。</p></div></div>
-<div class="step"><div class="num">5</div><div><h3>発行されたキーをコピーする</h3><p>「Copy」などでキーをコピーします。コピーした文字列を公開チャットや誰かへのメールに貼り付ける必要はありません。</p></div></div>
+<section class="section" id="get-key">
+<span class="pill">WINDOWS ② / iPhoneと共通</span>
+<h2>画面写真でわかる！Google AI StudioのAPIキー作成</h2>
+<p>阿部さん、この画面では<strong>何を入力するかを考えなくて大丈夫</strong>です。まずは下の指定どおりに入力してください。</p>
+<div class="input-values" aria-label="おすすめの入力値">
+<div class="input-value"><span class="input-label">APIキーの名前</span><code>pochipeta</code><span class="input-note">半角英字・小文字で入力</span></div>
+<div class="input-value"><span class="input-label">新しいプロジェクト名（必要な方だけ）</span><code>AI-Tools</code><span class="input-note">既存のプロジェクトが使える場合は新規作成不要</span></div>
+<div class="input-value"><span class="input-label">有効期限の設定（表示された場合だけ）</span><code>No expiration</code><span class="input-note">「無期限」「Never」「No expiry」などの同等の選択肢</span></div>
 </div>
-<div class="callout warn small"><strong>ご注意：</strong>APIキーはパスワード相当の秘密情報です。Google AI Studioの画面を人に見せる際、キーの表示部分は隠してください。2026年5月28日以降、Google AI Studioで新規作成するキーは原則として「Auth key」です。</div>
-<p class="minor">APIキーはぽちペタがGoogleのAIを使うための合い鍵です。阿部さん自身のGoogleアカウントで取得し、第三者に教えないでください。</p></section>
+<div class="callout warn small"><strong>「AI」ではなく「AI-Tools」を入力してください。</strong>Google Cloudのプロジェクト名は4～30文字が必要で、「AI」の2文字では作成できないためです。<a href="https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects" target="_blank" rel="noopener">Google公式の制約</a>も確認できます。</div>
+<div class="btns"><a class="btn" href="https://aistudio.google.com/api-keys" target="_blank" rel="noopener">Google AI StudioのAPIキー画面を開く ↗</a></div>
+<div class="steps">
+<div class="step"><div class="num">1</div><div><h3>Googleアカウントでログインする</h3><p>上の青いボタンを押してGoogle AI Studioへ移動。自分のGoogleアカウントを選び、初回は表示される利用規約に同意します。画面左に「API Keys」または「APIキー」が見える状態にします。</p></div></div>
+<div class="step"><div class="num">2</div><div><h3>「Create API key」を押す</h3><p>「API Keys」の画面で、右上あたりにある <span class="inline-kbd">Create API key</span>（APIキーを作成）を押します。</p>
+<figure class="screen-guide"><img loading="lazy" referrerpolicy="no-referrer" src="https://cdn.wedevs.com/uploads/2025/09/Create-API-key.png" alt="実画面のスクリーンショット。Google AI StudioのAPI Keys画面でCreate API keyボタンが赤枠で示されている"/><figcaption>実際の画面例①：右上の「Create API key」を押します。画像出典：<a href="https://wedevs.com/blog/510096/how-to-generate-gemini-api-key/" target="_blank" rel="noopener">weDevsの解説記事</a>。画像内に表示されるアカウントやプロジェクトは説明用の別環境です。</figcaption></figure>
+</div></div>
+<div class="step"><div class="num">3</div><div><h3>「Name your key」に <span class="inline-kbd">pochipeta</span> と入れる</h3><p>「Create a new key」（新しいキーを作成）の小窓が出ます。<strong>Name your key</strong>（キー名）の最初の文字を消して、半角小文字で <strong>pochipeta</strong> と入力してください。</p>
+<div class="field-sample"><span class="field-name">Name your key</span><span class="field-value">pochipeta</span><span class="field-help">これは管理画面で見分けるための名前です。秘密のAPIキー本体ではありません。</span></div>
+<figure class="screen-guide"><img loading="lazy" referrerpolicy="no-referrer" src="https://codelabs.developers.google.com/static/codelabs/coding-jam/img/aistudio.png" alt="Google公式Codelab掲載のGoogle AI Studio実画面。Create a new keyダイアログにはName your key入力欄とChoose an imported projectプルダウンがある"/><figcaption>実際の画面例②：キー名を入れる場所と、その下のプロジェクト選択欄。スクリーンショットに載っている名前はサンプルです。<strong>阿部さんは 「pochipeta」</strong>と続けて入力してください。画像出典：<a href="https://codelabs.developers.google.com/codelabs/coding-jam/instructions" target="_blank" rel="noopener">Google公式Codelab</a>。</figcaption></figure>
+</div></div>
+<div class="step"><div class="num">4</div><div><h3>「Choose an imported project」でプロジェクトを選ぶ</h3><p>キー名のすぐ下の欄をクリック。画面には「既存のプロジェクト」「Import project」「Create project」などが出ます。</p>
+<div class="option-block"><div><h4>✅ 既存のプロジェクトが一覧にある</h4><p>自分で使用できるものをそのまま選択してください。<strong>新しく作る必要はありません。</strong>既存プロジェクトが有料設定なら利用料が生じ得るため、課金状況は確認してください。</p></div><div><h4>➕ まだプロジェクトがない</h4><p><strong>Create project（プロジェクトを作成）</strong>を選択。新しいプロジェクト名には <span class="inline-kbd">AI-Tools</span> と入力し、作成してください。</p></div></div>
+<figure class="screen-guide"><img loading="lazy" referrerpolicy="no-referrer" src="https://wsform.com/wp-content/uploads/2026/05/google_ai_studio_gemini_create_project_name-1024x586.jpg" alt="Google AI Studioで新規プロジェクト名を入力する実画面のスクリーンショット"/><figcaption>実際の画面例③：新しくプロジェクトを作るときの名前入力画面（見た目は更新される場合があります）。<strong>入力する名前は AI-Tools</strong>。画像出典：<a href="https://wsform.com/safely-using-ai-api-keys-in-wordpress-connectors/" target="_blank" rel="noopener">WS Formの解説記事</a>。</figcaption></figure>
+<p class="small muted">「Import project」はGoogle Cloudにすでにあるのに一覧に出ないプロジェクトを取り込む操作です。初めて使う方で既存のプロジェクトがなければ「Create project」で大丈夫です。</p>
+</div></div>
+<div class="step"><div class="num">5</div><div><h3>有効期限の欄が出たら「無期限」を選ぶ</h3><p>画面に <strong>Expiration / Expires / 有効期限</strong> という項目が表示された場合は、<strong>No expiration（無期限）</strong>、<strong>No expiry</strong>、または同じ意味の選択肢を選びます。</p>
+<div class="field-sample"><span class="field-name">有効期限（表示された場合のみ）</span><span class="field-value">No expiration</span><span class="field-help">「期限なし」の意味。自分で日付を考えて設定する必要はありません。</span></div>
+<p class="small muted"><strong>期限欄が見つからない場合：</strong>探し続けなくて大丈夫です。Google AI Studioの現行の公開手順では期限の選択欄がない画面例もあります。その場合は何も設定せず次へ進んでください。APIキーの無期限設定は、無料利用枠や料金が無制限という意味ではありません。</p>
+</div></div>
+<div class="step"><div class="num">6</div><div><h3>「Create key」を押して発行する</h3><p>入力内容を確認して <span class="inline-kbd">Create key</span>（キーを作成）をクリック。少し待つとAPIキーが発行されます。<strong>ぽちペタ用の名前は「pochipeta」</strong>、使うプロジェクトは選択済みならOKです。</p></div></div>
+<div class="step"><div class="num">7</div><div><h3>作られたAPIキーの「Copy」を押す</h3><p>キー文字列が表示されたら、横の <span class="inline-kbd">Copy</span>（コピー）を押してください。長い英数字を<strong>手で打ち直す必要はありません。</strong>このWebページの入力欄やLINEには貼らず、そのままぽちペタの設定画面へ移動しましょう。</p>
+<figure class="screen-guide"><img loading="lazy" referrerpolicy="no-referrer" src="https://app.recallsync.com/documentation/assets/images/copy-gemini-api-a17de7f89543fa092ca5420b884011a0.jpeg" alt="実際のGoogle AI Studio画面。発行されたAPIキーの横にCopyボタンが表示されている"/><figcaption>実際の画面例④：発行されたキーの「Copy」を押す。画像のキーは記事用の伏せ字入りの例であり、このページではAPIキーを収集しません。画像出典：<a href="https://app.recallsync.com/documentation/onboarding/gemini" target="_blank" rel="noopener">Recall Syncの解説</a>。</figcaption></figure>
+</div></div>
+</div>
+<div class="callout ok"><strong>ここまでできればAPIキーの取得は完了！</strong><p>次は、このブラウザ画面を開いたまま、Windows版ぽちペタの設定へ移ってコピーしたキーを貼り付けます。途中でわからなくなったら、画面写真を見直してください。<strong>実際の秘密キーが写ったスクリーンショットは第三者に送らない</strong>でください。</p></div>
+</section>
 <section class="section" id="windows-setup">
 <span class="pill pill-win">WINDOWS ③</span>
 <h2>APIキー・マイク・ホットキーを設定する</h2>
@@ -125,6 +173,6 @@
 </ul></div>
 <p class="notehint">※ 送信する前に、氏名・日時・金額などが正しいか必ず確認してください。</p>
 </section>
-<section class="section"><h2>参考・公式情報</h2><ol class="source"><li><a href="https://note.com/konho/n/ncef9174c53c2" rel="noopener" target="_blank">開発者の案内：ぽちペタのWindows版・Mac版、使い方、料金</a></li><li><a href="https://ai.google.dev/gemini-api/docs/api-key" rel="noopener" target="_blank">Google：Gemini APIキーの管理・作成・安全な使い方</a></li><li><a href="https://ai.google.dev/gemini-api/docs/billing?hl=ja" rel="noopener" target="_blank">Google：Gemini APIの課金と無料枠</a></li><li><a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener" target="_blank">Google：Gemini APIのモデル別料金</a></li><li><a href="https://apps.apple.com/jp/app/id6811728707" rel="noopener" target="_blank">Apple App Store：ぽちペタの機能と必要条件</a></li><li><a href="https://pochipeta.kei31.dev/" rel="noopener" target="_blank">ぽちペタ：公式サイト・各種ダウンロード案内</a></li><li><a href="https://support.microsoft.com/ja-jp/windows/apps/how-to-install-programs-from-online-sources-on-windows" rel="noopener" target="_blank">Microsoft：Windowsでオンラインソフトをインストールする際の注意点</a></li></ol><p class="small muted">画面表示や料金は変更されることがあります。手順が異なる場合は公式案内を優先してください。</p></section><div class="footer">初心者向け ぽちペタ導入ガイド ・ Windows / iPhone 対応 ・ 更新日 2026-10-10 ・ サンプル文章は架空の内容です</div></main>
+<section class="section"><h2>参考・公式情報</h2><ol class="source"><li><a href="https://note.com/konho/n/ncef9174c53c2" rel="noopener" target="_blank">開発者の案内：ぽちペタのWindows版・Mac版、使い方、料金</a></li><li><a href="https://ai.google.dev/gemini-api/docs/api-key" rel="noopener" target="_blank">Google：Gemini APIキーの管理・作成・安全な使い方</a></li><li><a href="https://ai.google.dev/gemini-api/docs/billing?hl=ja" rel="noopener" target="_blank">Google：Gemini APIの課金と無料枠</a></li><li><a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener" target="_blank">Google：Gemini APIのモデル別料金</a></li><li><a href="https://apps.apple.com/jp/app/id6811728707" rel="noopener" target="_blank">Apple App Store：ぽちペタの機能と必要条件</a></li><li><a href="https://pochipeta.kei31.dev/" rel="noopener" target="_blank">ぽちペタ：公式サイト・各種ダウンロード案内</a></li><li><a href="https://support.microsoft.com/ja-jp/windows/apps/how-to-install-programs-from-online-sources-on-windows" rel="noopener" target="_blank">Microsoft：Windowsでオンラインソフトをインストールする際の注意点</a></li><li><a href="https://codelabs.developers.google.com/codelabs/coding-jam/instructions" target="_blank" rel="noopener">Google Codelab：APIキー名・プロジェクト選択の実画面写真</a></li><li><a href="https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects" target="_blank" rel="noopener">Google Cloud：プロジェクト名は4～30文字</a></li><li><a href="https://wsform.com/safely-using-ai-api-keys-in-wordpress-connectors/" target="_blank" rel="noopener">WS Form：Google AI Studioプロジェクト作成画面写真</a></li></ol><p class="small muted">画面表示や料金は変更されることがあります。手順が異なる場合は公式案内を優先してください。</p></section><div class="footer">初心者向け ぽちペタ導入ガイド ・ Windows / iPhone 対応 ・ 更新日 2026-10-10（APIキー画面手順改訂） ・ サンプル文章は架空の内容です</div></main>
 </body>
 </html>
