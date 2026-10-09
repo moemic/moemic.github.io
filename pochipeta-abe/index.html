@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>はじめての「ぽちペタ」｜Google AI Studio のAPIキー取得から音声入力まで</title>
+<style>
+:root{--ink:#172536;--muted:#66758a;--border:#dce5ef;--blue:#245ee9;--blue2:#edf3ff;--bg:#f5f8fc;--green:#e6f7ee;--orange:#fff4e6;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic',Meiryo,sans-serif}a{color:#184dc8;overflow-wrap:anywhere}a:hover{text-decoration:none}.wrap{max-width:1000px;margin:0 auto;padding:30px 20px 70px}.hero{background:linear-gradient(125deg,#101f3b,#183d89 65%,#245ee9);color:white;border-radius:24px;padding:44px 46px;position:relative;overflow:hidden}.hero:after{content:'✦';position:absolute;right:38px;top:10px;opacity:.12;font-size:12rem}.eyebrow{letter-spacing:.14em;font-weight:750;font-size:12px;opacity:.82;text-transform:uppercase}.hero h1{font-size:clamp(29px,4.6vw,44px);line-height:1.33;margin:14px 0}.hero p{max-width:700px;font-size:17px;opacity:.93;margin-bottom:0}.meta{margin-top:20px;font-size:13px;color:#d8e5ff}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.quick>div{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px}.quick strong{display:block;font-size:20px}.quick small{color:var(--muted)}.section{background:white;border:1px solid var(--border);border-radius:20px;padding:28px 32px;margin-top:23px;box-shadow:0 3px 20px rgba(20,45,85,.03)}h2{font-size:23px;line-height:1.4;margin:0 0 18px;letter-spacing:.01em}h3{font-size:17px;margin:0 0 7px;line-height:1.5}p{margin:7px 0 13px}.muted{color:var(--muted)}.pill{display:inline-block;background:#eaf0fb;color:#17489e;padding:3px 11px;font-size:12px;font-weight:800;border-radius:999px;vertical-align:middle}.steps{display:grid;gap:14px}.step{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;padding:17px;border:1px solid var(--border);border-radius:14px;background:#fff}.num{background:#eaf0ff;color:#2255c9;border-radius:11px;min-height:40px;display:grid;place-items:center;font-weight:850}.step p{margin:0}.btns{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 4px}.btn{display:inline-flex;align-items:center;gap:5px;text-decoration:none;background:var(--blue);color:white;padding:11px 19px;border-radius:12px;font-weight:800;font-size:14px}.btn.secondary{background:#edf3ff;color:#1a49a3}.callout{padding:17px 19px;border-radius:12px;background:var(--blue2);border-left:4px solid var(--blue);margin-top:15px}.callout.warn{background:var(--orange);border-color:#e9a232}.callout.ok{background:var(--green);border-color:#2ca56b}.small{font-size:14px}.path{font-weight:750;color:#133d88;background:#eff4fb;padding:10px 13px;border-radius:10px}.say{padding:16px 18px;background:#f4f7fb;border:1px solid #e0e7f1;border-radius:12px;color:#24354a}.result{padding:16px 18px;background:#f6fbf8;border:1px solid #cfe9d9;border-radius:12px;color:#203d2c}.compare{display:grid;grid-template-columns:1fr 1fr;gap:13px}.kicker{color:#52627a;font-weight:800;font-size:12px;letter-spacing:.06em;margin-bottom:9px}.arrow{color:#2a60bf;font-weight:800}.faq details{padding:13px 0;border-bottom:1px solid #e9eef5}.faq summary{cursor:pointer;font-weight:800}.faq details p{padding-left:1em;font-size:14px}.checklist{list-style:none;padding:0;margin:0;display:grid;gap:10px}.checklist li{padding:10px 12px;border:1px solid var(--border);border-radius:10px}.checklist input{accent-color:var(--blue);width:18px;height:18px;vertical-align:middle;margin-right:10px}.source{font-size:13px;color:var(--muted);margin:0;padding-left:20px}.source li{margin-bottom:9px}.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:24px}@media(max-width:700px){.wrap{padding:12px 12px 35px}.hero{padding:31px 22px;border-radius:17px}.hero:after{right:0;top:5px;font-size:8rem}.section{padding:22px 18px;border-radius:15px}.quick{grid-template-columns:1fr;gap:7px}.quick>div{padding:10px 15px}.quick strong{font-size:16px;display:inline;margin-right:10px}.compare{grid-template-columns:1fr}.hero h1{font-size:30px}.step{grid-template-columns:36px 1fr;padding:12px;gap:10px}.num{min-height:35px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero">
+ <div class="eyebrow">初めての生成AI活用 / 阿部さん向け スタートガイド</div>
+ <h1>話すだけで、<br>送れる文章になる。</h1>
+ <p>「ぽちペタ」の始め方を、Google AI StudioでのAPIキー取得から最初の音声入力まで、順番に案内します。難しいAIの知識は不要です。</p>
+ <div class="meta">2026年10月10日版 ・ iPhoneでの導入例 ・ 手順の所要時間は端末やログイン状況によって異なります</div>
+</header>
+<div class="quick">
+ <div><strong>① APIキーを作る</strong><small>Google AI Studio</small></div>
+ <div><strong>② ぽちペタに登録</strong><small>アプリとキーボードを設定</small></div>
+ <div><strong>③ 声で入力する</strong><small>LINEやメモで体験</small></div>
+</div>
+<section class="section" id="before"><h2>始める前に用意するもの</h2>
+<ul><li>iPhone とインターネット接続</li><li>自分のGoogleアカウント（GmailのアカウントでもOK）</li><li>App Storeからインストールする「ぽちペタ」</li></ul>
+<div class="btns"><a class="btn" target="_blank" rel="noopener" href="https://aistudio.google.com/api-keys">Google AI Studioを開く ↗</a><a class="btn secondary" target="_blank" rel="noopener" href="https://pochipeta.kei31.dev/">ぽちペタ公式サイトを見る ↗</a></div>
+<div class="callout"><strong>「APIキー」って何？</strong><p>ぽちペタがGoogleのAIを使うための、専用の合い鍵です。取得後にぽちペタの設定へ貼り付けるだけです。<strong>人に送ったり、画面写真に写したりしないでください。</strong></p></div>
+</section>
+<section class="section" id="get-key"><span class="pill">STEP 1</span><h2>Google AI StudioでAPIキーを作る</h2>
+<div class="steps">
+ <div class="step"><div class="num">1</div><div><h3>Google AI Studioにアクセス</h3><p><a target="_blank" rel="noopener" href="https://aistudio.google.com/api-keys">https://aistudio.google.com/api-keys</a> を開きます。</p></div></div>
+ <div class="step"><div class="num">2</div><div><h3>自分のGoogleアカウントでログイン</h3><p>初回は利用規約を確認し、必要な同意を行います。</p></div></div>
+ <div class="step"><div class="num">3</div><div><h3>APIキーの画面を確認する</h3><p>最初からキーが用意されている場合があります。見当たらなければ「Create API key」または「APIキーを作成」を押します。表示が少し違う場合もあります。</p></div></div>
+ <div class="step"><div class="num">4</div><div><h3>プロジェクトを選ぶ</h3><p>選択できるプロジェクトがあれば指定し、必要なら新規プロジェクトを作成します。キーはGoogle Cloudプロジェクトに紐づきます。</p></div></div>
+ <div class="step"><div class="num">5</div><div><h3>発行されたキーをコピーする</h3><p>「Copy」などでキーをコピーします。コピーした文字列を公開チャットや誰かへのメールに貼り付ける必要はありません。</p></div></div>
+</div>
+<div class="callout warn small"><strong>ご注意：</strong>APIキーはパスワード相当の秘密情報です。Google AI Studioの画面を人に見せる際、キーの表示部分は隠してください。2026年5月28日以降、Google AI Studioで新規作成するキーは原則として「Auth key」です。</div>
+</section>
+<section class="section" id="app"><span class="pill">STEP 2</span><h2>ぽちペタを使えるようにする</h2>
+<div class="steps">
+<div class="step"><div class="num">6</div><div><h3>App Storeから「ぽちペタ」をインストール</h3><p>インストール後、アプリを一度開きます。<a href="https://apps.apple.com/jp/app/id6811728707" target="_blank" rel="noopener">App Storeのページ ↗</a></p></div></div>
+<div class="step"><div class="num">7</div><div><h3>APIキーを設定する</h3><p>ぽちペタ内のGemini APIキー設定欄に、先ほどコピーしたキーを貼り付けて保存します。</p></div></div>
+<div class="step"><div class="num">8</div><div><h3>iPhoneにキーボードを追加する</h3><p>iPhoneの「設定」アプリから次の順に進み、ぽちペタを追加します。</p><p class="path">設定 → 一般 → キーボード → キーボード → 新しいキーボードを追加</p></div></div>
+<div class="step"><div class="num">9</div><div><h3>「フルアクセスを許可」をオンにする</h3><p>追加した「ぽちペタ」の設定でフルアクセスを許可します。アプリ公式説明によると、音声入力の結果をキーボードへ渡すために必要です。権限を理解したうえで設定してください。</p></div></div>
+<div class="step"><div class="num">10</div><div><h3>LINEやメモ帳を開いて、キーボードを切り替える</h3><p>文字入力欄でキーボード切替の地球儀マークなどから「ぽちペタ」を選び、マイクのキーを押して話します。</p></div></div>
+</div>
+<div class="callout ok"><strong>ここまでできたら準備完了。</strong><p>文字を打つ代わりに、しゃべるだけ。まずは下の例文で「言い直しも整えられるか」を体験しましょう。</p></div>
+</section>
+<section class="section" id="try"><span class="pill">お試し</span><h2>これを話してみよう！</h2>
+<p>わざと途中で予定を変更して話します。<strong>AIがどこまで言い直しを理解してくれるか</strong>に注目してください。</p>
+<div class="compare">
+<div><div class="kicker">声に出す内容</div><div class="say">えーと、山田さん、来週の打ち合わせなんですけど、火曜日の午後2時でお願いしてたと思うんですけど、あ、予定が変わって。木曜日の午後3時、いや4時ですね。木曜日の午後4時に変更できるか聞いてもらいたいんです。場所は前と同じで大丈夫です。よろしくお願いします。</div></div>
+<div><div class="kicker">整形後のイメージ（例）</div><div class="result">山田さん<br><br>来週の打ち合わせについて、日時を火曜日の14時から木曜日の16時に変更していただくことは可能でしょうか。<br><br>場所は前回と同じで問題ありません。<br><br>よろしくお願いいたします。</div></div>
+</div>
+<p class="small muted">※右側は説明用の出力例です。実際の結果はぽちペタのモデル・設定・認識状況によって変わります。敬語に整えたい場合は、ぽちペタの「カスタム音声入力」で敬語変換を設定すると比較しやすくなります。</p>
+<h3 style="margin-top:23px">次は阿部さんの実際の用事で</h3>
+<p>誰かに送るLINEを、文章にせず、普段の会話のように話してみてください。AIが文章を整えたら、内容を確認してから送信します。</p>
+</section>
+<section class="section"><h2>料金とプライバシーで知っておくこと</h2>
+<div class="steps">
+<div class="step"><div class="num">¥0</div><div><h3>APIキーの発行自体は無料</h3><p>Gemini APIにはモデル別の無料利用枠があります。ただし、すべてのモデルが無料とは限らず、利用回数の上限もあります。</p></div></div>
+<div class="step"><div class="num">!</div><div><h3>有料枠への切り替えは自分で確認してから</h3><p>Google AI Studioで課金を設定したプロジェクトでは、利用に応じて料金が生じます。料金・無料枠は変更されるため、実際に選ぶモデルの料金を確認してください。</p></div></div>
+<div class="step"><div class="num">鍵</div><div><h3>最初は架空の内容を試す</h3><p>ぽちペタの説明によると、音声入力・整形の処理はユーザー自身のAPIキーでGoogleに送信されます。無料枠では入力データがGoogleのサービス改善に利用される場合があるため、個人情報、顧客情報、機密事項はテストで話さないようにしましょう。</p></div></div>
+</div>
+<div class="btns"><a href="https://ai.google.dev/gemini-api/docs/pricing" class="btn secondary" target="_blank" rel="noopener">Google公式の料金表 ↗</a><a href="https://aistudio.google.com/usage" class="btn secondary" target="_blank" rel="noopener">使用状況を確認 ↗</a></div>
+</section>
+<section class="section faq"><h2>うまくいかないとき</h2>
+<details><summary>「APIキーを作成」が表示されない</summary><p>画面の「API Keys」や「Dashboard」を確認してください。初回に自動作成されたキーが表示されていることがあります。会社のGoogleアカウントで作成権限がない場合は、管理者に相談するか、自分で管理できるGoogleアカウントを使ってください。</p></details>
+<details><summary>ぽちペタのキーボードが出てこない</summary><p>iPhoneの「設定 → 一般 → キーボード → キーボード」で、ぽちペタが追加されているか確認。入力画面では地球儀アイコンなどで切り替えます。</p></details>
+<details><summary>音声入力後、文章が貼り付けられない</summary><p>キーボードの「フルアクセスを許可」、APIキーの保存状態、ネット接続を順に確認してください。アプリを再度開いて設定し直すと解消する場合があります。</p></details>
+<details><summary>「429」「利用上限」などのエラーが出る</summary><p>Gemini APIのリクエスト上限に達した可能性があります。時間をおいて再試行するか、Google AI Studioでモデル別の利用上限とプロジェクトの状態を確認してください。無料枠を超えたからといって、必ず自動的に課金されるわけではありません。</p></details>
+<details><summary>AIが文章を意図と違う内容にしてしまう</summary><p>AIの整形結果は必ず目視で確認しましょう。日時・金額・名前などは特に重要です。元の話し方を残したい場合は、カスタム音声入力の指示を調整します。</p></details>
+</section>
+<section class="section"><h2>最後の確認リスト</h2><ul class="checklist"><li><label><input type="checkbox">Google AI Studioにログインできた</label></li><li><label><input type="checkbox">自分のAPIキーを作成・コピーできた</label></li><li><label><input type="checkbox">ぽちペタにAPIキーを設定した</label></li><li><label><input type="checkbox">iPhoneにぽちペタのキーボードを追加した</label></li><li><label><input type="checkbox">フルアクセスを許可した</label></li><li><label><input type="checkbox">LINEかメモで音声入力を試した</label></li><li><label><input type="checkbox">送信前に文章を確認した</label></li></ul></section>
+<section class="section"><h2>参考・公式情報</h2><ol class="source"><li><a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank" rel="noopener">Google：Gemini APIキーの管理・作成・安全な使い方</a></li><li><a href="https://ai.google.dev/gemini-api/docs/billing?hl=ja" target="_blank" rel="noopener">Google：Gemini APIの課金と無料枠</a></li><li><a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener">Google：Gemini APIのモデル別料金</a></li><li><a href="https://apps.apple.com/jp/app/id6811728707" target="_blank" rel="noopener">Apple App Store：ぽちペタの機能と必要条件</a></li><li><a href="https://pochipeta.kei31.dev/" target="_blank" rel="noopener">ぽちペタ：公式サイト・各種ダウンロード案内</a></li></ol><p class="small muted">画面表示や料金は変更されることがあります。手順が異なる場合は公式案内を優先してください。</p></section>
+<div class="footer">初心者向け ぽちペタ導入ガイド ・ 作成日 2026-10-10 ・ サンプル文章は架空の内容です</div>
+</main>
+</body>
+</html>
