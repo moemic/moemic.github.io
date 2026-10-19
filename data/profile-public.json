@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "mining",
+      "period": "2016",
+      "title": "暗号資産マイニングマシン 自作開発",
+      "subtitle": "専用マザーボードがない時代に、メーカーと独自BIOSを開発",
+      "open": true,
+      "groups": [
+        {
+          "heading": "Problem",
+          "kind": "list",
+          "content": [
+            "一般的なマザーボードは複数GPUを想定していない",
+            "GPUを挿すとBIOSリソースが枯渇し、起動・認識しない",
+            "マイニング専用製品が市場に存在しない"
+          ]
+        },
+        {
+          "heading": "Approach",
+          "kind": "list",
+          "content": [
+            "メーカー技術部門と直接交渉し課題を共有",
+            "マイニング特化のカスタムBIOS開発を依頼・実現",
+            "実機テストを繰り返して安定稼働を確認"
+          ]
+        },
+        {
+          "heading": "Result",
+          "kind": "list",
+          "content": [
+            "汎用マザーボードで複数GPUの安定稼働に成功",
+            "YouTube経由で全国300名のコミュニティを組成",
+            "中国・深センへの共同購入プロジェクトへ発展"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-content",
+      "period": "2023 — NOW",
+      "title": "生成AI 多角的実験とコンテンツ制作フロー",
+      "subtitle": "ChatGPT 3.5時代から、画像・動画・音楽・文章を網羅的に検証",
+      "open": false,
+      "groups": [
+        {
+          "heading": "Explore",
+          "kind": "list",
+          "content": [
+            "LLM: ChatGPT / Claude / Gemini / Manus / Perplexity / Genspark / Skywork",
+            "CLI: Claude Code / Codex CLI / Gemini CLI",
+            "画像・動画（ImageFX, Runway, KlingAI）・音楽（Suno）"
+          ]
+        },
+        {
+          "heading": "Decide",
+          "kind": "list",
+          "content": [
+            "音楽生成は実用レベル → YouTube BGMに採用",
+            "動画生成はまだ実用前と判断",
+            "最も安定・効果的なのはライティングと結論"
+          ]
+        },
+        {
+          "heading": "Result",
+          "kind": "list",
+          "content": [
+            "note.com 記事生成の自動化フローを構築・運用",
+            "生成AI勉強会を共同主催・講師として1年以上",
+            "生成AI勉強会@麻布十番を独自に主催"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "event-operation",
+      "period": "2008 — 2018",
+      "title": "キャラ☆ステ 究極のローコスト運営",
+      "subtitle": "広告費ゼロ・人件費ゼロ・前日夜30分の準備で10年継続",
+      "open": false,
+      "groups": [
+        {
+          "heading": "Problem",
+          "kind": "list",
+          "content": [
+            "広告費・人件費の固定費が継続を阻む",
+            "月2回開催で準備時間を割けない",
+            "新規イベントは初回集客が最も難しい"
+          ]
+        },
+        {
+          "heading": "Approach",
+          "kind": "list",
+          "content": [
+            "準備過程からXで発信し、期待感と口コミを醸成",
+            "参加者の自律性に任せるセルフサービス運営",
+            "準備手順を標準化し、必要最小限に絞る"
+          ]
+        },
+        {
+          "heading": "Result",
+          "kind": "list",
+          "content": [
+            "毎回150〜300人、年間5,000〜6,000人を動員",
+            "初回からスムーズにローンチ",
+            "「過度に頑張らない」ことで10年継続"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "delivery-experiment",
+      "period": "2019 — NOW",
+      "title": "Uber Eats 新規エリア開拓と働き方の実験",
+      "subtitle": "東京黎明期から参加、那覇で「Uber Eatsだけで1ヶ月生活」",
+      "open": false,
+      "groups": [
+        {
+          "heading": "Context",
+          "kind": "paragraph",
+          "content": "2019年5月、登録は秋葉原での対面のみ、エリアは港区中心だった頃に参加。ギグエコノミーを自分の体で確かめるための実験として始めました。"
+        },
+        {
+          "heading": "Experiments",
+          "kind": "list",
+          "content": [
+            "沖縄・那覇のサービス開始時に1ヶ月の生活実験、noteで公開",
+            "地元・金沢のオープン初日に稼働",
+            "バイクで東京中を走り、街の変化を体感"
+          ]
+        },
+        {
+          "heading": "Learnings",
+          "kind": "list",
+          "content": [
+            "自由度と収入を両立できる働き方の実証",
+            "新規エリア初期の課題と可能性を現場で理解",
+            "6年8ヶ月継続し、プラットフォームの進化を体験"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repair-handover",
+      "period": "2005",
+      "title": "修理サポート部門 情報共有システム",
+      "subtitle": "10名チームのシフト間引き継ぎを標準化",
+      "open": false,
+      "groups": [
+        {
+          "heading": "Problem",
+          "kind": "list",
+          "content": [
+            "常時2名のシフト制で担当が頻繁に入れ替わる",
+            "修理は複数日にまたがり、情報が属人化",
+            "顧客が同じ説明を繰り返す状況"
+          ]
+        },
+        {
+          "heading": "Approach",
+          "kind": "list",
+          "content": [
+            "案件ごとの記録項目と引き継ぎフォーマットを統一",
+            "全案件を一箇所に集約し検索可能に",
+            "交代時の必須チェック項目を定義"
+          ]
+        },
+        {
+          "heading": "Result",
+          "kind": "list",
+          "content": [
+            "引き継ぎ漏れをほぼゼロに",
+            "担当が変わっても一貫した対応で信頼向上",
+            "以後の事業・コミュニティ運営の土台に"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "photography-delivery-2022",
+      "period": "2022.07",
+      "title": "出張撮影・写真データ納品",
+      "subtitle": "撮影から写真データの受け渡しまで対応",
+      "open": false,
+      "groups": [
+        {
+          "heading": "Work",
+          "kind": "list",
+          "content": [
+            "出張での写真撮影",
+            "撮影後の写真データ納品"
+          ]
+        },
+        {
+          "heading": "Role",
+          "kind": "paragraph",
+          "content": "撮影と写真データの納品を担当。"
+        },
+        {
+          "heading": "Result",
+          "kind": "paragraph",
+          "content": "写真データを納品し、依頼者への受け渡しを完了。"
+        }
+      ]
+    },
+    {
+      "id": "pc-requirements-2021",
+      "period": "2021.06 — 08",
+      "title": "業務用PCの要件整理・機種選定相談",
+      "subtitle": "使い方に合わせて必要な仕様を整理",
+      "open": false,
+      "groups": [
+        {
+          "heading": "Work",
+          "kind": "list",
+          "content": [
+            "業務用途に応じたPC要件の整理",
+            "メモリ・CPU・ストレージの検討"
+          ]
+        },
+        {
+          "heading": "Role",
+          "kind": "paragraph",
+          "content": "用途と必要な仕様の整理、機種選定・見積りに関する相談に対応。"
+        },
+        {
+          "heading": "Scope",
+          "kind": "paragraph",
+          "content": "担当したのは要件整理と選定相談。PCの販売・納品は別事業者が担当。"
+        }
+      ]
+    },
+    {
+      "id": "ai-study-talk-2026",
+      "period": "2026.10.15",
+      "title": "生成AI勉強会での登壇",
+      "subtitle": "実務でのAI活用と、依頼窓口をまとめる考え方を共有",
+      "open": false,
+      "groups": [
+        {
+          "heading": "Theme",
+          "kind": "paragraph",
+          "content": "実務での生成AI活用と、複数のAIへの依頼窓口をまとめる考え方を紹介。"
+        },
+        {
+          "heading": "Role",
+          "kind": "paragraph",
+          "content": "生成AI勉強会の登壇者として、自身の活用事例を共有。"
+        },
+        {
+          "heading": "Work",
+          "kind": "paragraph",
+          "content": "2026年10月15日に登壇。業務整理や制作での活用について話した。"
+        }
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "youtube_id": "R_C8EVbmQtk",
+      "title": "YouTube動画 1"
+    },
+    {
+      "youtube_id": "2Q500IpBjdA",
+      "title": "YouTube動画 2"
+    },
+    {
+      "youtube_id": "953BDfqQpZs",
+      "title": "YouTube動画 3"
+    },
+    {
+      "youtube_id": "aEPbbVka_94",
+      "title": "YouTube動画 4"
+    }
+  ]
+}
