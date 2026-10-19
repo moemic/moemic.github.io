@@ -185,20 +185,20 @@
       "open": false,
       "groups": [
         {
-          "heading": "Work",
+          "heading": "技能",
           "kind": "list",
           "content": [
-            "出張での写真撮影",
-            "撮影後の写真データ納品"
+            "出張写真撮影",
+            "写真データ納品"
           ]
         },
         {
-          "heading": "Role",
+          "heading": "担当",
           "kind": "paragraph",
           "content": "撮影と写真データの納品を担当。"
         },
         {
-          "heading": "Result",
+          "heading": "成果",
           "kind": "paragraph",
           "content": "写真データを納品し、依頼者への受け渡しを完了。"
         }
@@ -212,7 +212,7 @@
       "open": false,
       "groups": [
         {
-          "heading": "Work",
+          "heading": "技能",
           "kind": "list",
           "content": [
             "業務用途に応じたPC要件の整理",
@@ -220,12 +220,12 @@
           ]
         },
         {
-          "heading": "Role",
+          "heading": "担当",
           "kind": "paragraph",
           "content": "用途と必要な仕様の整理、機種選定・見積りに関する相談に対応。"
         },
         {
-          "heading": "Scope",
+          "heading": "対応範囲",
           "kind": "paragraph",
           "content": "担当したのは要件整理と選定相談。PCの販売・納品は別事業者が担当。"
         }
@@ -239,19 +239,50 @@
       "open": false,
       "groups": [
         {
-          "heading": "Theme",
-          "kind": "paragraph",
-          "content": "実務での生成AI活用と、複数のAIへの依頼窓口をまとめる考え方を紹介。"
+          "heading": "技能",
+          "kind": "list",
+          "content": [
+            "生成AIの実務活用",
+            "活用事例の説明・登壇"
+          ]
         },
         {
-          "heading": "Role",
+          "heading": "担当",
           "kind": "paragraph",
           "content": "生成AI勉強会の登壇者として、自身の活用事例を共有。"
         },
         {
-          "heading": "Work",
+          "heading": "成果",
           "kind": "paragraph",
           "content": "2026年10月15日に登壇。業務整理や制作での活用について話した。"
+        }
+      ]
+    },
+    {
+      "id": "footage-cooperation-2021",
+      "period": "2021.05",
+      "title": "テレビ番組への取材協力・映像提供",
+      "subtitle": "自身で撮影した映像を番組制作向けに提供",
+      "open": false,
+      "groups": [
+        {
+          "heading": "技能",
+          "kind": "list",
+          "content": [
+            "映像撮影",
+            "映像提供",
+            "取材協力"
+          ]
+        },
+        {
+          "heading": "担当",
+          "kind": "paragraph",
+          "content": "取材への協力と、自身で撮影した映像の提供を担当。"
+        },
+        {
+          "heading": "成果",
+          "kind": "paragraph",
+          "content": "番組制作に向けた取材協力と映像の提供を実施。"
         }
       ]
     }
