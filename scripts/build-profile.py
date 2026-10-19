@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """公開用データから既存サイトの実績・動画欄だけを生成する。"""
 import argparse
+from datetime import datetime
 import html
 import json
 from pathlib import Path
@@ -21,8 +22,8 @@ def text(value):
 
 
 def render(data):
-    exact_keys(data, ['schema_version', 'cases', 'videos'])
-    if type(data['schema_version']) is not int or data['schema_version'] != 1:
+    exact_keys(data, ['schema_version', 'cases', 'videos', 'featured_video'])
+    if type(data['schema_version']) is not int or data['schema_version'] != 2:
         raise ValueError('未対応のデータ版です')
     if not isinstance(data['cases'], list) or not 1 <= len(data['cases']) <= 100:
         raise ValueError('実績の件数が範囲外です')
@@ -59,12 +60,34 @@ def render(data):
         video_ids.add(vid)
         videos.append('        <div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/'
                       + vid + '" title="' + text(video['title']) + '" allowfullscreen></iframe></div>')
-    return '\n\n'.join(cases), '\n'.join(videos)
+    featured = ''
+    video = data['featured_video']
+    if video is not None:
+        exact_keys(video, ['youtube_id', 'title', 'published_at'])
+        vid = video['youtube_id']
+        if not isinstance(vid, str) or not re.fullmatch(r'[A-Za-z0-9_-]{11}', vid):
+            raise ValueError('最新動画のIDが不正です')
+        if not isinstance(video['published_at'], str):
+            raise ValueError('公開日時が不正です')
+        published = datetime.fromisoformat(video['published_at'])
+        if published.tzinfo is None:
+            raise ValueError('公開日時にはタイムゾーンが必要です')
+        title = text(video['title'])
+        featured = ('      <article class="featured-work reveal">\n'
+            + '        <p class="eyebrow">最新の公開動画</p>\n'
+            + '        <h3>' + title + '</h3>\n'
+            + '        <p class="featured-meta"><time datetime="' + text(video['published_at']) + '">'
+            + published.strftime('%Y.%m.%d') + '</time> 公開 · <a href="https://www.youtube.com/watch?v='
+            + vid + '" target="_blank" rel="noopener">YouTubeで見る ↗</a></p>\n'
+            + '        <div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/'
+            + vid + '" title="' + title + '" allowfullscreen></iframe></div>\n'
+            + '      </article>')
+    return '\n\n'.join(cases), '\n'.join(videos), featured
 
 
 def build(document, data):
-    cases, videos = render(data)
-    for name, body in [('cases', cases), ('videos', videos)]:
+    cases, videos, featured = render(data)
+    for name, body in [('cases', cases), ('videos', videos), ('featured', featured)]:
         start, end = '<!-- profile:' + name + ':start -->', '<!-- profile:' + name + ':end -->'
         if document.count(start) != 1 or document.count(end) != 1:
             raise ValueError('生成範囲のマーカーが一意ではありません')

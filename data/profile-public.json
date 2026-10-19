@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "cases": [
     {
       "id": "mining",
@@ -48,8 +48,8 @@
           "heading": "Explore",
           "kind": "list",
           "content": [
-            "LLM: ChatGPT / Claude / Gemini / Manus / Perplexity / Genspark / Skywork",
-            "CLI: Claude Code / Codex CLI / Gemini CLI",
+            "LLM: ChatGPT / Claude / Gemini",
+            "CLI: Claude Code / Codex CLI",
             "画像・動画（ImageFX, Runway, KlingAI）・音楽（Suno）"
           ]
         },
@@ -273,5 +273,10 @@
       "youtube_id": "aEPbbVka_94",
       "title": "YouTube動画 4"
     }
-  ]
+  ],
+  "featured_video": {
+    "youtube_id": "-QgI9ocnKAQ",
+    "title": "【第1回 生成AI勉強会@三軒茶屋】dotsが世界を変える！実務で本当に使える生成AI活用術",
+    "published_at": "2026-10-18T06:19:59+00:00"
+  }
 }

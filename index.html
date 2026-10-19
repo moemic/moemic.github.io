@@ -105,6 +105,10 @@ details.case summary:hover h3{color:var(--accent)}
 .video iframe{width:100%;height:100%;border:0;display:block}
 @media (max-width:640px){.videos{grid-template-columns:1fr}}
 
+.featured-work{margin-bottom:40px;padding:24px;border:1px solid var(--line);background:var(--surface)}
+.featured-work h3{font-size:clamp(20px,2.4vw,26px);line-height:1.5;margin:8px 0}
+.featured-meta{font-size:14px;color:var(--muted);margin-bottom:20px}
+
 /* experience */
 .xp{border-top:1px solid var(--ink)}
 .xp-row{display:grid;grid-template-columns:200px 1fr 1.3fr;gap:32px;padding:26px 0;border-bottom:1px solid var(--line)}
@@ -230,7 +234,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <details class="case">
           <summary><span class="yr">2023 — NOW</span><h3>生成AI 多角的実験とコンテンツ制作フロー<small>ChatGPT 3.5時代から、画像・動画・音楽・文章を網羅的に検証</small></h3><span class="plus">+</span></summary>
           <div class="case-body">
-            <div><h4>Explore</h4><ul><li>LLM: ChatGPT / Claude / Gemini / Manus / Perplexity / Genspark / Skywork</li><li>CLI: Claude Code / Codex CLI / Gemini CLI</li><li>画像・動画（ImageFX, Runway, KlingAI）・音楽（Suno）</li></ul></div>
+            <div><h4>Explore</h4><ul><li>LLM: ChatGPT / Claude / Gemini</li><li>CLI: Claude Code / Codex CLI</li><li>画像・動画（ImageFX, Runway, KlingAI）・音楽（Suno）</li></ul></div>
             <div><h4>Decide</h4><ul><li>音楽生成は実用レベル → YouTube BGMに採用</li><li>動画生成はまだ実用前と判断</li><li>最も安定・効果的なのはライティングと結論</li></ul></div>
             <div><h4>Result</h4><ul><li>note.com 記事生成の自動化フローを構築・運用</li><li>生成AI勉強会を共同主催・講師として1年以上</li><li>生成AI勉強会@麻布十番を独自に主催</li></ul></div>
           </div>
@@ -300,6 +304,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <span class="num">03 — WORKS</span>
         <div><h2>映像の仕事。</h2><p>カメラ歴15年以上。YouTubeチャンネルで公開している動画の一部です。</p></div>
       </div>
+      <!-- profile:featured:start -->
+      <article class="featured-work reveal">
+        <p class="eyebrow">最新の公開動画</p>
+        <h3>【第1回 生成AI勉強会@三軒茶屋】dotsが世界を変える！実務で本当に使える生成AI活用術</h3>
+        <p class="featured-meta"><time datetime="2026-10-18T06:19:59+00:00">2026.10.18</time> 公開 · <a href="https://www.youtube.com/watch?v=-QgI9ocnKAQ" target="_blank" rel="noopener">YouTubeで見る ↗</a></p>
+        <div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/-QgI9ocnKAQ" title="【第1回 生成AI勉強会@三軒茶屋】dotsが世界を変える！実務で本当に使える生成AI活用術" allowfullscreen></iframe></div>
+      </article>
+      <!-- profile:featured:end -->
       <div class="videos reveal">
       <!-- profile:videos:start -->
         <div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/R_C8EVbmQtk" title="YouTube動画 1" allowfullscreen></iframe></div>
@@ -347,7 +359,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div>
           <h3>AI TOOLS</h3>
           <div class="tags">
-            <span class="tag hot">Claude Code</span><span class="tag hot">Codex CLI</span><span class="tag hot">Gemini CLI</span><span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">Manus</span><span class="tag">Perplexity</span><span class="tag">Genspark</span><span class="tag">Skywork</span><span class="tag">Suno</span><span class="tag">Runway</span><span class="tag">KlingAI</span><span class="tag">ImageFX</span>
+            <span class="tag hot">Claude Code</span><span class="tag hot">Codex CLI</span><span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">Suno</span><span class="tag">Runway</span><span class="tag">KlingAI</span><span class="tag">ImageFX</span>
           </div>
         </div>
       </div>
