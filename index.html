@@ -60,27 +60,37 @@ nav a:hover{color:var(--ink)}
 
 
 /* publication index */
-#channels{padding:48px 0 56px;scroll-margin-top:72px}
-.channel-head{display:flex;justify-content:space-between;align-items:end;gap:12px 32px;flex-wrap:wrap;margin-bottom:24px}
+#channels{padding:52px 0 56px;scroll-margin-top:72px}
+.channel-head{display:flex;justify-content:space-between;align-items:end;gap:12px 32px;flex-wrap:wrap;margin-bottom:28px}
 .channel-head .eyebrow{font-size:13px;margin-bottom:8px;color:var(--muted)}
 .channel-head h2{font-size:clamp(28px,4vw,42px)}
-.channel-head>p{color:var(--muted);max-width:38ch;font-size:16px}
-.channel-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;list-style:none}
-.channel-grid li{grid-column:span 2;min-width:0}
-.channel-card{height:100%;display:flex;flex-direction:column;padding:18px 20px;border:1px solid var(--line);border-radius:4px;background:var(--surface);text-decoration:none;transition:border-color .2s}
-.channel-card:hover,.channel-card:focus-visible{border-color:var(--accent)}
-.channel-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.channel-top{display:flex;align-items:center;gap:10px}
-.channel-icon{width:34px;height:34px;display:grid;place-items:center;flex:none;border:1px solid var(--line);border-radius:4px}
-.channel-icon svg{width:18px;height:18px;fill:currentColor}
+.channel-head>p{color:var(--muted);max-width:34ch;font-size:16px}
+.channel-collections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px}
+.channel-group{border-top:2px solid var(--ink);padding-top:10px;min-width:0}
+.channel-group h3{font-size:21px;line-height:1.5;margin-bottom:12px}
+.channel-group.shared{grid-column:1/-1}
+.channel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;list-style:none}
+.shared .channel-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.channel-grid li{min-width:0}
+.channel-grid li.show-card{grid-column:1/-1}
+@media(min-width:620px){.channel-group:not(.shared) .channel-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:486px) and (max-width:619px){.channel-group:not(.shared) .channel-grid li:nth-child(3){grid-column:1/-1}}
+.channel-card{height:100%;display:flex;flex-direction:column;overflow-wrap:anywhere;padding:14px 16px;border:1px solid var(--line);border-radius:4px;background:var(--surface);text-decoration:none;transition:border-color .2s}
+a.channel-card:hover,a.channel-card:focus-visible{border-color:var(--accent)}
+.channel-card:focus-visible,.channel-platforms a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.channel-top{display:flex;align-items:center;gap:8px}
+.channel-icon{width:32px;height:32px;display:grid;place-items:center;flex:none;border:1px solid var(--line);border-radius:4px;font:600 14px/1 var(--mono)}
 .channel-platform{font-weight:900;font-size:14px}
 .channel-arrow{margin-left:auto;font-size:18px;color:var(--muted)}
-.channel-name{display:block;font-size:20px;font-weight:900;line-height:1.4;margin:14px 0 4px}
-.channel-desc{display:block;font-size:16px;color:var(--muted);line-height:1.5}
-.channel-id{display:block;font:14px/1.5 var(--mono);overflow-wrap:anywhere;color:var(--muted);padding-top:14px;margin-top:auto}
+.channel-name{display:block;font-size:18px;font-weight:900;line-height:1.4;margin:9px 0 3px}
+.channel-desc{display:block;font-size:15px;color:var(--muted);line-height:1.5}
+.channel-id{display:block;font:14px/1.5 var(--mono);color:var(--muted);padding-top:10px;margin-top:auto}
 .channel-state{font-size:14px;color:var(--ink);border:1px solid var(--line);padding:0 6px;border-radius:3px}
-@media(max-width:830px){.channel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.channel-grid li{grid-column:auto}}
-@media(max-width:540px){#channels{padding:36px 0 40px}.channel-grid{grid-template-columns:minmax(0,1fr)}.channel-card{padding:14px 16px}}
+.channel-platforms{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.channel-platforms a{border:1px solid var(--line);border-radius:4px;padding:4px 9px;font-size:14px;font-weight:700;text-decoration:none}
+.channel-platforms a:hover{border-color:var(--accent);text-decoration:underline}
+@media(max-width:900px){.channel-collections{grid-template-columns:minmax(0,1fr)}.shared .channel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:485px){#channels{padding:36px 0 40px}.channel-grid,.shared .channel-grid{grid-template-columns:minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){.channel-card{transition:none}}
 
 /* firsts timeline */
@@ -211,46 +221,85 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="wrap">
       <div class="channel-head">
         <div><p class="eyebrow">PUBLICATIONS &amp; SOCIAL</p><h2 id="channels-title">発信・制作</h2></div>
-        <p>書いた記事、公開した動画、SNS。気になるところからどうぞ。</p>
+        <p>生成AIの実践と、B級ビジネスの調査。記事・動画・音声を、読みやすい媒体からどうぞ。</p>
       </div>
-      <ul class="channel-grid" role="list">
-        <li><a class="channel-card" href="https://note.com/micnote" target="_blank" rel="noopener">
-          <span class="channel-top"><span class="channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5h14v14H5v-3h8v-2H5v-3h8V9H5z"/></svg></span><span class="channel-platform">note</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
-          <span class="channel-name">記事を読む</span>
-          <span class="channel-desc">生成AIの使い方や、実際に試してわかったこと。</span>
-          <span class="channel-id">note.com/micnote</span>
-        </a></li>
-        <li><a class="channel-card" href="https://www.youtube.com/@TSakashita" target="_blank" rel="noopener">
-          <span class="channel-top"><span class="channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21.6 7.3a2.8 2.8 0 0 0-2-2C17.8 5 12 5 12 5s-5.8 0-7.6.3a2.8 2.8 0 0 0-2 2A28.4 28.4 0 0 0 2 12a28.4 28.4 0 0 0 .4 4.7 2.8 2.8 0 0 0 2 2c1.8.3 7.6.3 7.6.3s5.8 0 7.6-.3a2.8 2.8 0 0 0 2-2A28.4 28.4 0 0 0 22 12a28.4 28.4 0 0 0-.4-4.7ZM10 15.3V8.7l5.8 3.3Z"/></svg></span><span class="channel-platform">YouTube</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
-          <span class="channel-name">動画を見る</span>
-          <span class="channel-desc">生成AI勉強会のアーカイブや、これまでの映像作品。</span>
-          <span class="channel-id">@TSakashita</span>
-        </a></li>
-        <li><a class="channel-card" href="https://music.amazon.com/podcasts/3ad93c7d-f3d1-46b7-99ea-ed4ec401cded/" target="_blank" rel="noopener">
-          <span class="channel-top"><span class="channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Zm-6 9a6 6 0 0 0 5 5.9V21h2v-3.1a6 6 0 0 0 5-5.9h-2a4 4 0 0 1-8 0Z"/></svg></span><span class="channel-platform">ポッドキャスト</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
-          <span class="channel-name">生成AI実践ラジオ</span>
-          <span class="channel-desc">AIの使い方と、試して分かったことを音声で。</span>
-          <span class="channel-id">Amazon Music</span>
-        </a></li>
-        <li><a class="channel-card" href="https://x.com/AI_sakashi" target="_blank" rel="noopener">
-          <span class="channel-top"><span class="channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.3 3H20l-5.9 6.8L21 21h-5.4l-4.2-6.5L5.7 21H3l6.3-7.3L3 3h5.6l3.8 6Zm-1 16h1.6L7.7 5H6.1Z"/></svg></span><span class="channel-platform">X</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
-          <span class="channel-name">生成AIの発信</span>
-          <span class="channel-desc">AIツールの新情報と、使ってみた話。</span>
-          <span class="channel-id">@AI_sakashi</span>
-        </a></li>
-        <li><a class="channel-card" href="https://x.com/takahirosakashi" target="_blank" rel="noopener">
-          <span class="channel-top"><span class="channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.3 3H20l-5.9 6.8L21 21h-5.4l-4.2-6.5L5.7 21H3l6.3-7.3L3 3h5.6l3.8 6Zm-1 16h1.6L7.7 5H6.1Z"/></svg></span><span class="channel-platform">X</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
-          <span class="channel-name">B級ビジネスコレクター</span>
-          <span class="channel-desc">気になったサービスや、世の中の面白い動き。</span>
-          <span class="channel-id">@takahirosakashi</span>
-        </a></li>
-        <li><a class="channel-card" href="https://x.com/sakashiiiii/" target="_blank" rel="noopener">
-          <span class="channel-top"><span class="channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.3 3H20l-5.9 6.8L21 21h-5.4l-4.2-6.5L5.7 21H3l6.3-7.3L3 3h5.6l3.8 6Zm-1 16h1.6L7.7 5H6.1Z"/></svg></span><span class="channel-platform">X</span><span class="channel-state">現在休止中</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
-          <span class="channel-name">メインアカウント</span>
-          <span class="channel-desc">さかしーのメインアカウント。</span>
-          <span class="channel-id">@sakashiiiii</span>
-        </a></li>
-      </ul>
+      <div class="channel-collections">
+        <div class="channel-group" aria-labelledby="channel-ai">
+          <h3 id="channel-ai">生成AI・実践</h3>
+          <ul class="channel-grid" role="list">
+          <li><a class="channel-card" href="https://note.com/micnote" target="_blank" rel="noopener">
+            <span class="channel-top"><span class="channel-icon" aria-hidden="true">n</span><span class="channel-platform">note</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+            <span class="channel-name">生成AIの実践記事</span><span class="channel-desc">AIツールを試して分かったことと、実際の使い方。</span><span class="channel-id">note.com/micnote</span>
+          </a></li>
+          <li><a class="channel-card" href="https://www.youtube.com/@AI_sakashi" target="_blank" rel="noopener">
+            <span class="channel-top"><span class="channel-icon" aria-hidden="true">▶</span><span class="channel-platform">YouTube</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+            <span class="channel-name">さかしー 生成AI実践ラボ</span><span class="channel-desc">ツールの実演と、生成AIの使い方を動画で。</span><span class="channel-id">@AI_sakashi</span>
+          </a></li>
+          <li><a class="channel-card" href="https://x.com/AI_sakashi" target="_blank" rel="noopener">
+            <span class="channel-top"><span class="channel-icon" aria-hidden="true">𝕏</span><span class="channel-platform">X</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+            <span class="channel-name">AIさかしー</span><span class="channel-desc">最新のAIツールや、使ってみた記録。</span><span class="channel-id">@AI_sakashi</span>
+          </a></li>
+          <li class="show-card"><div class="channel-card">
+            <span class="channel-top"><span class="channel-icon" aria-hidden="true">♪</span><span class="channel-platform">ポッドキャスト</span></span>
+            <span class="channel-name">さかしーの生成AI実践ラジオ</span><span class="channel-desc">AIを仕事や日常で使って試した話を、音声で。</span>
+            <div class="channel-platforms" role="group" aria-label="さかしーの生成AI実践ラジオの配信先">
+              <a href="https://www.youtube.com/playlist?list=PLWdG-LUai0xg" target="_blank" rel="noopener">YouTube</a>
+              <a href="https://open.spotify.com/show/2m5mUaRjalvYjQwigzusVI" target="_blank" rel="noopener">Spotify</a>
+              <a href="https://podcasts.apple.com/jp/podcast/id6837901155" target="_blank" rel="noopener">Apple Podcasts</a>
+              <a href="https://music.amazon.co.jp/podcasts/3ad93c7d-f3d1-46b7-99ea-ed4ec401cded" target="_blank" rel="noopener">Amazon Music</a>
+            </div>
+          </div></li>
+          </ul>
+        </div>
+        <div class="channel-group" aria-labelledby="channel-biz">
+          <h3 id="channel-biz">B級ビジネス・検証</h3>
+          <ul class="channel-grid" role="list">
+          <li><a class="channel-card" href="https://note.com/bkyu_sakashi" target="_blank" rel="noopener">
+            <span class="channel-top"><span class="channel-icon" aria-hidden="true">n</span><span class="channel-platform">note</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+            <span class="channel-name">B級ビジネス研究所</span><span class="channel-desc">話題の案件の仕組みや、実際に調べて分かったこと。</span><span class="channel-id">note.com/bkyu_sakashi</span>
+          </a></li>
+          <li><a class="channel-card" href="https://www.youtube.com/@TSakashita" target="_blank" rel="noopener">
+            <span class="channel-top"><span class="channel-icon" aria-hidden="true">▶</span><span class="channel-platform">YouTube</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+            <span class="channel-name">B級ビジネスチャンネル</span><span class="channel-desc">ビジネスの話と、これまで公開してきた映像。</span><span class="channel-id">@TSakashita</span>
+          </a></li>
+          <li><a class="channel-card" href="https://x.com/takahirosakashi" target="_blank" rel="noopener">
+            <span class="channel-top"><span class="channel-icon" aria-hidden="true">𝕏</span><span class="channel-platform">X</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+            <span class="channel-name">B級ビジネスコレクター</span><span class="channel-desc">気になったサービスや、世の中の面白い動き。</span><span class="channel-id">@takahirosakashi</span>
+          </a></li>
+          <li class="show-card"><div class="channel-card">
+            <span class="channel-top"><span class="channel-icon" aria-hidden="true">♪</span><span class="channel-platform">ポッドキャスト</span></span>
+            <span class="channel-name">さかしーのB級ビジネス研究所ラジオ</span><span class="channel-desc">気になるビジネスの仕組みや、現場で見聞きした話。</span>
+            <div class="channel-platforms" role="group" aria-label="さかしーのB級ビジネス研究所ラジオの配信先">
+              <a href="https://www.youtube.com/playlist?list=PLOG4UqalBnjU" target="_blank" rel="noopener">YouTube</a>
+              <a href="https://open.spotify.com/show/143alesCrDIOPsNvzERIzU" target="_blank" rel="noopener">Spotify</a>
+              <a href="https://podcasts.apple.com/jp/podcast/id6837911368" target="_blank" rel="noopener">Apple Podcasts</a>
+              <a href="https://music.amazon.co.jp/podcasts/22990c9f-9b76-451e-8b1e-f21c76a61f0b" target="_blank" rel="noopener">Amazon Music</a>
+            </div>
+          </div></li>
+          </ul>
+        </div>
+        <div class="channel-group shared" aria-labelledby="channel-more">
+          <h3 id="channel-more">ニュースレター・その他</h3>
+          <ul class="channel-grid" role="list">
+          <li><a class="channel-card" href="https://moemic.substack.com/" target="_blank" rel="noopener">
+            <span class="channel-top"><span class="channel-icon" aria-hidden="true">S</span><span class="channel-platform">Substack</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+            <span class="channel-name">さかしーのSubstack</span><span class="channel-desc">仕事や日常、制作の裏話。</span><span class="channel-id">@moemic</span>
+          </a></li>
+          <li><a class="channel-card" href="https://sakashiiiii.m-newsletter.com/" target="_blank" rel="noopener">
+            <span class="channel-top"><span class="channel-icon" aria-hidden="true">✉</span><span class="channel-platform">メルマガ</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+            <span class="channel-name">週刊 さかしーのAI×副業ログ</span><span class="channel-desc">AIの使い方と、副業での実践をメールで。</span><span class="channel-id">みんなのニュースレター</span>
+          </a></li>
+          <li><a class="channel-card" href="https://www.youtube.com/channel/UCZCQwgiuH6xmKSKErnZjzbg" target="_blank" rel="noopener">
+            <span class="channel-top"><span class="channel-icon" aria-hidden="true">▶</span><span class="channel-platform">YouTube</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+            <span class="channel-name">moemic</span><span class="channel-desc">もえみっく名義で公開してきた映像。</span><span class="channel-id">moemic</span>
+          </a></li>
+          <li><a class="channel-card" href="https://x.com/sakashiiiii/" target="_blank" rel="noopener">
+            <span class="channel-top"><span class="channel-icon" aria-hidden="true">𝕏</span><span class="channel-platform">X</span><span class="channel-state">現在休止中</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+            <span class="channel-name">メインアカウント</span><span class="channel-desc">さかしーのメインアカウント。</span><span class="channel-id">@sakashiiiii</span>
+          </a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
