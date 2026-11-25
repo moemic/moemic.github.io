@@ -58,6 +58,32 @@ nav a:hover{color:var(--ink)}
 .btn.primary{background:var(--ink);color:var(--bg)}
 .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 
+
+/* publication index */
+#channels{padding:48px 0 56px;scroll-margin-top:72px}
+.channel-head{display:flex;justify-content:space-between;align-items:end;gap:12px 32px;flex-wrap:wrap;margin-bottom:24px}
+.channel-head .eyebrow{font-size:13px;margin-bottom:8px;color:var(--muted)}
+.channel-head h2{font-size:clamp(28px,4vw,42px)}
+.channel-head>p{color:var(--muted);max-width:38ch;font-size:16px}
+.channel-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;list-style:none}
+.channel-grid li{grid-column:span 2;min-width:0}
+.channel-grid li:nth-child(-n+2){grid-column:span 3}
+.channel-card{height:100%;display:flex;flex-direction:column;padding:18px 20px;border:1px solid var(--line);border-radius:4px;background:var(--surface);text-decoration:none;transition:border-color .2s}
+.channel-card:hover,.channel-card:focus-visible{border-color:var(--accent)}
+.channel-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.channel-top{display:flex;align-items:center;gap:10px}
+.channel-icon{width:34px;height:34px;display:grid;place-items:center;flex:none;border:1px solid var(--line);border-radius:4px}
+.channel-icon svg{width:18px;height:18px;fill:currentColor}
+.channel-platform{font-weight:900;font-size:14px}
+.channel-arrow{margin-left:auto;font-size:18px;color:var(--muted)}
+.channel-name{display:block;font-size:20px;font-weight:900;line-height:1.4;margin:14px 0 4px}
+.channel-desc{display:block;font-size:16px;color:var(--muted);line-height:1.5}
+.channel-id{display:block;font:14px/1.5 var(--mono);overflow-wrap:anywhere;color:var(--muted);padding-top:14px;margin-top:auto}
+.channel-state{font-size:14px;color:var(--ink);border:1px solid var(--line);padding:0 6px;border-radius:3px}
+@media(max-width:830px){.channel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.channel-grid li,.channel-grid li:nth-child(-n+2){grid-column:auto}}
+@media(max-width:540px){#channels{padding:36px 0 40px}.channel-grid{grid-template-columns:minmax(0,1fr)}.channel-card{padding:14px 16px}}
+@media(prefers-reduced-motion:reduce){.channel-card{transition:none}}
+
 /* firsts timeline */
 .firsts{border-bottom:1px solid var(--line);margin-bottom:-1px}
 .firsts ol{list-style:none;display:flex;flex-wrap:wrap;border-left:1px solid var(--line);padding:0}
@@ -160,7 +186,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="wrap">
     <a class="brand" href="#top">SAKASHITA<span>.</span></a>
     <nav>
-      <a href="#cases">Projects</a><a href="#works">Works</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+      <a href="#channels">発信・制作</a><a href="#cases">Projects</a><a href="#works">Works</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
     </nav>
     <button class="theme" id="theme" aria-label="テーマ切替">◐</button>
   </div>
@@ -177,13 +203,51 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div class="cta">
           <a class="btn primary" href="https://lin.ee/tK7z8jB" target="_blank" rel="noopener">LINEで相談する →</a>
           <a class="btn" href="#contact">空き時間を見る</a>
-          <a class="btn" href="https://x.com/sakashiiiii/" target="_blank" rel="noopener">X</a>
-          <a class="btn" href="https://www.youtube.com/@TSakashita" target="_blank" rel="noopener">YouTube</a>
-          <a class="btn" href="https://note.com/micnote" target="_blank" rel="noopener">note</a>
         </div>
       </div>
     </div>
   </div>
+
+  <section id="channels" aria-labelledby="channels-title">
+    <div class="wrap">
+      <div class="channel-head">
+        <div><p class="eyebrow">PUBLICATIONS &amp; SOCIAL</p><h2 id="channels-title">発信・制作</h2></div>
+        <p>書いた記事、公開した動画、SNS。気になるところからどうぞ。</p>
+      </div>
+      <ul class="channel-grid" role="list">
+        <li><a class="channel-card" href="https://note.com/micnote" target="_blank" rel="noopener">
+          <span class="channel-top"><span class="channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5h14v14H5v-3h8v-2H5v-3h8V9H5z"/></svg></span><span class="channel-platform">note</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+          <span class="channel-name">記事を読む</span>
+          <span class="channel-desc">生成AIの使い方や、実際に試してわかったこと。</span>
+          <span class="channel-id">note.com/micnote</span>
+        </a></li>
+        <li><a class="channel-card" href="https://www.youtube.com/@TSakashita" target="_blank" rel="noopener">
+          <span class="channel-top"><span class="channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21.6 7.3a2.8 2.8 0 0 0-2-2C17.8 5 12 5 12 5s-5.8 0-7.6.3a2.8 2.8 0 0 0-2 2A28.4 28.4 0 0 0 2 12a28.4 28.4 0 0 0 .4 4.7 2.8 2.8 0 0 0 2 2c1.8.3 7.6.3 7.6.3s5.8 0 7.6-.3a2.8 2.8 0 0 0 2-2A28.4 28.4 0 0 0 22 12a28.4 28.4 0 0 0-.4-4.7ZM10 15.3V8.7l5.8 3.3Z"/></svg></span><span class="channel-platform">YouTube</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+          <span class="channel-name">動画を見る</span>
+          <span class="channel-desc">生成AI勉強会のアーカイブや、これまでの映像作品。</span>
+          <span class="channel-id">@TSakashita</span>
+        </a></li>
+        <li><a class="channel-card" href="https://x.com/AI_sakashi" target="_blank" rel="noopener">
+          <span class="channel-top"><span class="channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.3 3H20l-5.9 6.8L21 21h-5.4l-4.2-6.5L5.7 21H3l6.3-7.3L3 3h5.6l3.8 6Zm-1 16h1.6L7.7 5H6.1Z"/></svg></span><span class="channel-platform">X</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+          <span class="channel-name">生成AIの発信</span>
+          <span class="channel-desc">AIツールの新情報と、使ってみた話。</span>
+          <span class="channel-id">@AI_sakashi</span>
+        </a></li>
+        <li><a class="channel-card" href="https://x.com/takahirosakashi" target="_blank" rel="noopener">
+          <span class="channel-top"><span class="channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.3 3H20l-5.9 6.8L21 21h-5.4l-4.2-6.5L5.7 21H3l6.3-7.3L3 3h5.6l3.8 6Zm-1 16h1.6L7.7 5H6.1Z"/></svg></span><span class="channel-platform">X</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+          <span class="channel-name">個人アカウント</span>
+          <span class="channel-desc">坂下たかひろのXアカウント。</span>
+          <span class="channel-id">@takahirosakashi</span>
+        </a></li>
+        <li><a class="channel-card" href="https://x.com/sakashiiiii/" target="_blank" rel="noopener">
+          <span class="channel-top"><span class="channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.3 3H20l-5.9 6.8L21 21h-5.4l-4.2-6.5L5.7 21H3l6.3-7.3L3 3h5.6l3.8 6Zm-1 16h1.6L7.7 5H6.1Z"/></svg></span><span class="channel-platform">X</span><span class="channel-state">現在休止中</span><span class="channel-arrow" aria-hidden="true">↗</span></span>
+          <span class="channel-name">メインアカウント</span>
+          <span class="channel-desc">さかしーのメインアカウント。</span>
+          <span class="channel-id">@sakashiiiii</span>
+        </a></li>
+      </ul>
+    </div>
+  </section>
 
   <div class="firsts" aria-label="初めての年表">
     <ol class="wrap">
@@ -419,11 +483,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <h2 style="margin-top:16px">新しいこと、<br>一緒にやりませんか。</h2>
       <a class="btn line" href="https://lin.ee/tK7z8jB" target="_blank" rel="noopener">LINE公式アカウントで相談する →</a>
       <p class="mail-alt">メールの場合：<a href="mailto:sss@sss-group.net">sss@sss-group.net</a></p>
-      <div class="cta">
-        <a class="btn" href="https://x.com/sakashiiiii/" target="_blank" rel="noopener">X @sakashiiiii</a>
-        <a class="btn" href="https://www.youtube.com/@TSakashita" target="_blank" rel="noopener">YouTube</a>
-        <a class="btn" href="https://note.com/micnote" target="_blank" rel="noopener">note</a>
-      </div>
       <p class="cal-note">アポイント調整の際は、下記カレンダーで空き時間をご確認のうえ、候補日時をご提案ください。</p>
       <div class="cal" style="margin-top:16px">
         <iframe loading="lazy" title="空き時間カレンダー" src="https://calendar.google.com/calendar/embed?height=900&wkst=1&ctz=Asia%2FTokyo&showPrint=0&showTitle=0&showDate=0&showTz=0&showTabs=0&mode=WEEK&src=YmxvZ0Btb2VtaWMuY29t&src=azQxNmZzZ3VyMzRuZ2dyOGxtdW1wdTVpcjBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bW9lbWljLmNvbV9oaGkwNW0wdmw4M3VrbHRzbGNvaWN0bnBkb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=bW9lbWljLmNvbV9sNmJkY3IxNGdmdmhudnRpZHNqMHQ1dmdoNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23d81b60&color=%23d50000&color=%23f4511e&color=%23f4511e"></iframe>
